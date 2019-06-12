@@ -15,12 +15,10 @@ public class ConductorService {
 	@Autowired
 	private Conductor conductor;
 	
-
-	public Long crearCarrera(String tarjetaCredito, String origen, String destino, int distancia, int coste) {
-		return conductorRepo.save(tarjetaCredito, origen, destino, distancia, coste);
-	}
-	
 	public Conductor recuperarConductor(String tarjetaCredito) {
 		return conductorRepo.findByTarjeta(tarjetaCredito);
+	}
+	
+	public void init() {
 	}
 }
