@@ -20,28 +20,28 @@ public class Conductor {
 	@Id
 	@SequenceGenerator(name = "conductor_id_seq", sequenceName = "conductor_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String co_tarjeta;
+	private String tarjeta;
 	
-	@Column(name = "nombre")
-	private String co_nombre = null;
+	@Column(name = "co_nombre")
+	private String nombre = null;
 	
-	@Column(name = "modelo")
-	private String co_modelo = null;
+	@Column(name = "co_modelo")
+	private String modelo = null;
 	
-	@Column(name = "matricula")
-	private String co_matricula = null;
+	@Column(name = "co_matricula")
+	private String matricula = null;
 	
-	@Column(name = "valoracion_media")
-	private double co_valoracionMedia = 0d;
+	@Column(name = "co_valoracion_media")
+	private double valoracionMedia = 0d;
 	
-	@Column(name = "ocupado")
-	private boolean co_ocupado = false;
+	@Column(name = "co_ocupado")
+	private boolean ocupado = false;
 	
-	@Column(name = "valoraciones")
-	private ArrayList<Byte> co_valoraciones = new ArrayList<>();
+	@Column(name = "co_valoraciones")
+	private ArrayList<Byte> valoraciones = new ArrayList<>();
 	
-	@Column(name = "carreras")
-	private Set<Carrera> co_carreras = new HashSet<>();
+	@Column(name = "co_carreras")
+	private Set<Carrera> carreras = new HashSet<>();
 
 	/**
 	 * Constructores: necesitamos el constructor por defecto 
@@ -53,7 +53,7 @@ public class Conductor {
 	}
 	
 	public Conductor(String tarjetaCredito){
-		this.co_tarjeta = tarjetaCredito;
+		this.tarjeta = tarjetaCredito;
 	}
 		
 	/** 
@@ -61,39 +61,39 @@ public class Conductor {
 	 */
 
 	public String getNombre() {
-		return this.co_nombre;
+		return this.nombre;
 	}
 
-	public void setNombre(String co_nombre) {
-		this.co_nombre = co_nombre;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getModelo() {
-		return this.co_modelo;
+		return this.modelo;
 	}
 
-	public void setModelo(String co_modelo) {
-		this.co_modelo = co_modelo;
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
 
 	public String getMatricula() {
-		return this.co_matricula;
+		return this.matricula;
 	}
 
-	public void setMatricula(String co_matricula) {
-		this.co_matricula = co_matricula;
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 
 	public double getValoracion() {
-		return this.co_valoracionMedia;
+		return this.valoracionMedia;
 	}
 	
 	public int getNumeroValoraciones(){
-		return this.co_valoraciones.size();
+		return this.valoraciones.size();
 	}
 
-	public void setValoracion(byte co_valoracion) {		
-		this.co_valoraciones.add(co_valoracion);
+	public void setValoracion(byte valoracion) {		
+		this.valoraciones.add(valoracion);
 		this.calcularValoracionMedia();
 	}
 

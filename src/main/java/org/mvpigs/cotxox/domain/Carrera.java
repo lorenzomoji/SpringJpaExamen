@@ -13,41 +13,35 @@ import javax.persistence.Table;
 @Table(name = "Carrera")
 public class Carrera {
 
-
 	@Id
 	@SequenceGenerator(name = "lote_id_seq", sequenceName = "lote_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+	
+	@Column(name = "c_tarjeta_credito")
 	private String tarjetaCredito = null;
 	
-	@Column(name = "origen")
+	@Column(name = "c_origen")
 	private String origen = null;
 	
-	@Column(name = "destino")
+	@Column(name = "c_destino")
 	private String destino = null;
 	
-	@Column(name = "distancia")
+	@Column(name = "c_distancia")
 	private double distancia = 0d;
 	
-	@Column(name = "tiempo_esperado")
+	@Column(name = "c_tiempo_esperado")
 	private int tiempoEsperado = 0;
 	
-	@Column(name =  "tiempo_carrera")
+	@Column(name =  "c_tiempo_carrera")
 	private int tiempoCarrera = 0;
 	
-	@Column(name = "coste_total")
+	@Column(name = "c_coste_total")
 	private double costeTotal = 0;
 	
-	@Column(name = "propina")
+	@Column(name = "c_propina")
 	private int propina = 0;
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setPropina(int propina) {
-		this.propina = propina;
-	}
-
 	@ManyToOne
 	private Conductor conductor = null;
 	

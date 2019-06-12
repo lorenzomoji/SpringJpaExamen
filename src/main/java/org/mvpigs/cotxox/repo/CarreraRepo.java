@@ -11,6 +11,4 @@ public interface CarreraRepo extends JpaRepository<Carrera, Long>{
 
 	Long save(String tarjetaCredito, String origen, String destino, int distancia, int coste);
 
-	String findById(int id);
-
 }

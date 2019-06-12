@@ -20,7 +20,7 @@ public class ConductorService {
 		return conductorRepo.save(tarjetaCredito, origen, destino, distancia, coste);
 	}
 	
-	public Carrera recuperaCarrera(String nombre) {
-		return conductorRepo.findByNombre(nombre);
+	public Conductor recuperarConductor(String tarjetaCredito) {
+		return conductorRepo.findByTarjeta(tarjetaCredito);
 	}
 }
