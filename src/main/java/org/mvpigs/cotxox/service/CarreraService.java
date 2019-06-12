@@ -27,4 +27,9 @@ public class CarreraService {
 		return carreraRepo.findById(idCarrera);
 	}
 	
+	public void updateCarrera() {
+		carreraRepo.delete(carrera);
+		carreraRepo.save(carrera);
+	}
+	
 }

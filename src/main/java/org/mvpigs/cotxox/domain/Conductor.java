@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Conductor")
+@Table(name = "t_conductores")
 public class Conductor {
 
 	@Id
